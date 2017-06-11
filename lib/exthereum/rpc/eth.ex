@@ -1,5 +1,5 @@
 defmodule Exthereum.Eth do
-  use Exthereum.Sender
+  use Exthereum.Transport
   alias Exthereum.Conversion
 
   @eth_server_url Application.get_env(:exthereum, :eth_server_url)
