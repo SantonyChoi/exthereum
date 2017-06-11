@@ -1,5 +1,6 @@
 defmodule Exthereum do
-  alias Exthereum.Accounts
+  alias Exthereum.Web3
+  alias Exthereum.Eth
   @moduledoc """
   Documentation for Exthereum.
   """
@@ -18,11 +19,11 @@ defmodule Exthereum do
   """
   @spec get_version :: {:ok, String.t} | {:error, String.t}
   def get_version do
-    Accounts.get_version
+    Web3.get_version
   end
 
   @spec get_balance(String.t) :: {:ok, float} | {:error, String.t}
   def get_balance(account_hash) do
-    Accounts.get_balance(account_hash)
+    Eth.get_balance(account_hash)
   end
 end
