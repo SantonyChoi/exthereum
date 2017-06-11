@@ -12,8 +12,8 @@ defmodule Exthereum do
       iex> Exthereum.get_version
       {:ok, "Geth/v1.6.5-stable-cf87713d/darwin-amd64/go1.8.3"}
 
-      iex> Exthereum.get_balance("0xfE8bf4ca8A6170E759E89EDB5cc9adec3e33493f")
-      {:ok, "Geth/v1.6.5-stable-cf87713d/darwin-amd64/go1.8.3"}
+      iex> Exthereum.get_balance("0xfE8bf4ca8A6170E759E89EDB5cc9adec3e33493f") # Feel free to donate to this address :-)
+      {:ok, 0.4650075166583676}
 
   """
   @spec get_version :: {:ok, String.t} | {:error, String.t}
