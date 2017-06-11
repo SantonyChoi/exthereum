@@ -6,6 +6,14 @@ The goal is to cover the entire JSON-RPC for Geth/Parity API and to keep it clea
 mix test
 mix dialyzer
 ```
+
+```elixir
+iex> Exthereum.get_version
+{:ok, "Geth/v1.6.5-stable-cf87713d/darwin-amd64/go1.8.3"}
+
+iex> Exthereum.get_balance("0xfE8bf4ca8A6170E759E89EDB5cc9adec3e33493f") # Feel free to donate to this address :-)
+{:ok, 0.4650075166583676}
+```
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
