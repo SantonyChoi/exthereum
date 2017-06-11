@@ -2,22 +2,15 @@ defmodule Exthereum.Accounts do
   require IEx
   alias Exthereum.Conversion
 
-  @eth_server_url "http://localhost:8545"
-
+  @eth_server_url Application.get_env(:exthereum, :eth_server_url)
 
   @spec unhex(String.t) :: String.t
-  def unhex ("0x"<>str) do
+  def unhex("0x"<>str) do
     str
   end
-
-  @spec get_version :: {:ok, String.t} | {:error, String.t}
-  def get_version do
-    case __MODULE__.send("web3_clientVersion") do
-      {:ok, version} ->
-        {:ok, version}
-      {:error, reason} ->
-        {:error, reason}
-    end
+  @spec unhex(String.t) :: String.t
+  def unhex(str) do
+    str
   end
 
   @spec send(method :: String.t, params :: map) :: {:ok, map} | {:error, String.t}
@@ -33,6 +26,16 @@ defmodule Exthereum.Accounts do
     end
   end
 
+  @spec get_version :: {:ok, String.t} | {:error, String.t}
+  def get_version do
+    case __MODULE__.send("web3_clientVersion") do
+      {:ok, version} ->
+        {:ok, version}
+      {:error, reason} ->
+        {:error, reason}
+    end
+  end
+
   @spec get_balance(String.t) :: {:ok, float} | {:error, String.t}
   def get_balance(account_hash) do
     case __MODULE__.send("eth_getBalance",[account_hash, "latest"]) do
@@ -45,5 +48,4 @@ defmodule Exthereum.Accounts do
         {:error, reason}
     end
   end
-
 end

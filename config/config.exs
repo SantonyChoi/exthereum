@@ -10,7 +10,7 @@ use Mix.Config
 
 # You can configure for your application as:
 #
-#     config :exthereum, key: :value
+  config :exthereum, eth_server_url: "http://localhost:8545"
 #
 # And access this configuration in your application as:
 #
