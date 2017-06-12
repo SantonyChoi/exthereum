@@ -1,6 +1,8 @@
 # Exthereum
 This library intends to present a convenient interface to control a full Ethereum node from Elixir using the standard JSON-RPC API. It decodes the hex responses when necessary, and aims to cover the entire JSON-RPC API for Geth/Parity. This project has @specs for every function and is using Dialyzer + ExUnit.
 
+The plan is to cherrypick the most commonly used functions from https://github.com/ethereum/wiki/wiki/JSON-RPC first, then fill in the blanks. I will also include some of the more commonly used Admin+Personal API functions which will require geth to be started with `--rpcapi "db,eth,net,web3,personal"` which should only be done in a safe network environment if at all.
+
 ```elixir
 mix test
 mix dialyzer
