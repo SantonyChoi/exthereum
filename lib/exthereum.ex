@@ -2,6 +2,7 @@ defmodule Exthereum do
   alias Exthereum.Web3
   alias Exthereum.Eth
   alias Exthereum.Net
+  alias Exthereum.Personal
   @moduledoc """
   Documentation for Exthereum.
   """
@@ -55,6 +56,9 @@ defmodule Exthereum do
 
       iex> Exthereum.transaction_count("0xfE8bf4ca8A6170E759E89EDB5cc9adec3e33493f")
       {:ok, 3858216}
+
+      iex> Exthereum.new_account("h4ck3r", "h4ck3r")
+      {:ok, "50172f916cb2e64172919090af4ff0ba4638d8dd"}
 
   """
   @spec client_version :: {:ok, String.t} | {:error, String.t}
@@ -129,7 +133,7 @@ defmodule Exthereum do
 
   @spec get_storage_at(String.t) :: {:ok, integer} | {:error, String.t}
   def get_storage_at(hash) do
-    {:error, "to_be_implemented"}
+    {:error, "pending"}
   end
 
   @spec transaction_count(hash :: String.t) :: {:ok, integer} | {:error, String.t}
@@ -139,23 +143,32 @@ defmodule Exthereum do
 
   @spec block_transaction_count_by_hash(String.t) :: {:ok, integer} | {:error, String.t}
   def block_transaction_count_by_hash(hash) do
-    {:error, "to_be_implemented"}
+    {:error, "pending"}
   end
 
   @spec block_transaction_count_by_number(integer) :: {:ok, integer} | {:error, String.t}
   def block_transaction_count_by_number(n) do
-    {:error, "to_be_implemented"}
+    {:error, "pending"}
   end
 
-  @spec uncle_count_by_block_hash(hash) :: {:ok, integer} | {:error, String.t}
+  @spec uncle_count_by_block_hash(hash :: String.t) :: {:ok, integer} | {:error, String.t}
   def uncle_count_by_block_hash(hash) do
-    {:error, "to_be_implemented"}
+    {:error, "pending"}
   end
 
   @spec uncle_count_by_block_number(integer) :: {:ok, integer} | {:error, String.t}
   def uncle_count_by_block_number(n) do
-    {:error, "to_be_implemented"}
+    {:error, "pending"}
   end
 
- 
+  @spec uncle_count_by_block_hash(hash :: String.t) :: {:ok, integer} | {:error, String.t}
+  def uncle_count_by_block_hash(hash) do
+    {:error, "pending"}
+  end
+
+  @spec new_account(password :: String.t, password_confirmation :: String.t) :: {:ok, integer} | {:error, String.t}
+  def new_account(password, password_confirmation) do
+    Personal.new_account(password, password_confirmation)
+  end
+
 end
