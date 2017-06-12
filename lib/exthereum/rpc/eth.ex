@@ -86,7 +86,7 @@ defmodule Exthereum.Eth do
     end
   end
 
-  @spec accounts :: {:ok, List.t} | {:error, String.t}
+  @spec accounts :: {:ok, list} | {:error, String.t}
   def accounts do
     case send("eth_accounts") do
       {:ok, result} ->

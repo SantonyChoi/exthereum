@@ -50,7 +50,7 @@ defmodule Exthereum do
         "0x141feb71895530f537c847d62f039d9be895bd35",
         "0xe55c5bb9d42307e03fb4aa39ccb878c16f6f901e",
         "0x50172f916cb2e64172919090af4ff0ba4638d8dd"]}
-        
+
       iex> Exthereum.block_number
       {:ok, 3858216}
 
@@ -119,7 +119,7 @@ defmodule Exthereum do
     Eth.gas_price
   end
 
-  @spec accounts :: {:ok, List.t} | {:error, String.t}
+  @spec accounts :: {:ok, list} | {:error, String.t}
   def accounts do
     Eth.accounts
   end
@@ -154,18 +154,13 @@ defmodule Exthereum do
     {:error, "pending"}
   end
 
-  @spec uncle_count_by_block_hash(hash :: String.t) :: {:ok, integer} | {:error, String.t}
+  @spec uncle_count_by_block_hash(String.t) :: {:ok, integer} | {:error, String.t}
   def uncle_count_by_block_hash(hash) do
     {:error, "pending"}
   end
 
   @spec uncle_count_by_block_number(integer) :: {:ok, integer} | {:error, String.t}
   def uncle_count_by_block_number(n) do
-    {:error, "pending"}
-  end
-
-  @spec uncle_count_by_block_hash(hash :: String.t) :: {:ok, integer} | {:error, String.t}
-  def uncle_count_by_block_hash(hash) do
     {:error, "pending"}
   end
 
