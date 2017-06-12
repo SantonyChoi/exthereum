@@ -59,8 +59,8 @@ iex> Exthereum.get_balance("0xfE8bf4ca8A6170E759E89EDB5cc9adec3e33493f") # Donat
 ### This project is not currently published on hex.pm
 ### Clone the repo or wait a few weeks
 ```elixir
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-## by adding `exthereum` to your list of dependencies in `mix.exs`:
+#If [available in Hex](https://hex.pm/docs/publish), the package can be installed
+# by adding `exthereum` to your list of dependencies in `mix.exs`:
 def deps do
   [{:exthereum, "~> 0.1.0"}]
 end
