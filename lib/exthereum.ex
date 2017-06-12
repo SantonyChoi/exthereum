@@ -53,6 +53,9 @@ defmodule Exthereum do
       iex> Exthereum.get_balance("0xfE8bf4ca8A6170E759E89EDB5cc9adec3e33493f") # Donations accepted :-)
       {:ok, 0.4650075166583676}
 
+      iex> Exthereum.transaction_count("0xfE8bf4ca8A6170E759E89EDB5cc9adec3e33493f")
+      {:ok, 3858216}
+
   """
   @spec client_version :: {:ok, String.t} | {:error, String.t}
   def client_version do
@@ -123,4 +126,35 @@ defmodule Exthereum do
   def get_balance(account_hash) do
     Eth.get_balance(account_hash)
   end
+
+  @spec get_storage_at(String.t) :: {:ok, integer} | {:error, String.t}
+  def get_storage_at(hash) do
+    {:error, "to_be_implemented"}
+  end
+
+  @spec transaction_count(hash :: String.t) :: {:ok, integer} | {:error, String.t}
+  def transaction_count(hash) do
+    Eth.transaction_count(hash)
+  end
+
+  @spec block_transaction_count_by_hash(String.t) :: {:ok, integer} | {:error, String.t}
+  def block_transaction_count_by_hash(hash) do
+    {:error, "to_be_implemented"}
+  end
+
+  @spec block_transaction_count_by_number(integer) :: {:ok, integer} | {:error, String.t}
+  def block_transaction_count_by_number(n) do
+    {:error, "to_be_implemented"}
+  end
+
+  @spec uncle_count_by_block_hash(hash) :: {:ok, integer} | {:error, String.t}
+  def uncle_count_by_block_hash(hash) do
+    {:error, "to_be_implemented"}
+  end
+
+  @spec uncle_count_by_block_number(integer) :: {:ok, integer} | {:error, String.t}
+  def uncle_count_by_block_number(n) do
+    {:error, "to_be_implemented"}
+  end
+ 
 end

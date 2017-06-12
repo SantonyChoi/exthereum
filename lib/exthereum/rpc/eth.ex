@@ -108,5 +108,16 @@ defmodule Exthereum.Eth do
     end
   end
 
+  @spec transaction_count(account_hash :: String.t) :: {:ok, integer} | {:error, String.t}
+  def transaction_count(account_hash) do
+    case __MODULE__.send("eth_getTransactionCount",[account_hash, "latest"]) do
+      {:ok, block} ->
+        decoded_number = block
+          |> Hexate.to_integer
+        {:ok, decoded_number}
+      {:error, reason} ->
+        {:error, reason}
+    end
+  end
 
 end
