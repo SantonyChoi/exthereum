@@ -1,7 +1,6 @@
 defmodule Exthereum.Personal do
   use Exthereum.Transport
   alias Exthereum.Conversion
-  require IEx
   require Logger
 @moduledoc """
 This could be considered dangerous as it requires the admin api to be exposed over JSON-RPC

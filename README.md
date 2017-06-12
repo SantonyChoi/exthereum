@@ -4,6 +4,8 @@ This library exists to present a convenient interface to control a full Ethereum
 
 The roadmap is to cherrypick the most commonly used functions from https://github.com/ethereum/wiki/wiki/JSON-RPC first, then fill in the blanks. I will also include some of the more commonly used Admin+Personal API functions which will require geth to be started with `--rpcapi "db,eth,net,web3,personal"` which should only be done in a safe network environment if at all.
 
+UPDATE: Currently you can create accounts, unlock accounts, lock accounts, and send eth to anyone on the blockchain.
+
 ```elixir
 mix test
 mix dialyzer
@@ -48,7 +50,7 @@ mix dialyzer
         "0x141feb71895530f537c847d62f039d9be895bd35",
         "0xe55c5bb9d42307e03fb4aa39ccb878c16f6f901e",
         "0x50172f916cb2e64172919090af4ff0ba4638d8dd"]}
-        
+
       iex> Exthereum.block_number
       {:ok, 3858216}
 
@@ -60,6 +62,15 @@ mix dialyzer
 
       iex> Exthereum.new_account("h4ck3r", "h4ck3r")
       {:ok, "50172f916cb2e64172919090af4ff0ba4638d8dd"}
+
+      iex> Exthereum.unlock_account("0xe55c5bb9d42307e03fb4aa39ccb878c16f6f901e", "h4ck3r")
+      {:ok, true}
+
+      iex> Exthereum.lock_account("0xe55c5bb9d42307e03fb4aa39ccb878c16f6f901e")
+      {:ok, true}
+
+      iex>  Exthereum.send_transaction("0xe55c5bb9d42307e03fb4aa39ccb878c16f6f901e", "0xfE8bf4ca8A6170E759E89EDB5cc9adec3e33493f", 0.00043, "h4ck3r")
+      {:ok, true}
 ```
 
 ## Installation
