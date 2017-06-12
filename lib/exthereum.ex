@@ -20,6 +20,36 @@ defmodule Exthereum do
       iex> Exthereum.net_version
       {:ok, "1"}
 
+      iex> Exthereum.peer_count
+      {:ok, "19"}
+
+      iex> Exthereum.listening
+      {:ok, true}
+
+      iex> Exthereum.protocol_version
+      {:ok, 63}
+
+      iex> Exthereum.syncing
+      {:ok, false}
+
+      iex> Exthereum.coinbase
+      {:ok, false}
+
+      iex> Exthereum.mining
+      {:ok, true}
+
+      iex> Exthereum.hashrate
+      {:ok, "0"}
+
+      iex> Exthereum.gas_price
+      {:ok, 22061831512}
+
+      iex> Exthereum.accounts
+      {:ok, ["0x78fc2b9b6cf9b18f91037a5e0e074a479be9dca1","0x141feb71895530f537c847d62f039d9be895bd35"]}
+
+      iex> Exthereum.block_number
+      {:ok, 3858216}
+
       iex> Exthereum.get_balance("0xfE8bf4ca8A6170E759E89EDB5cc9adec3e33493f") # Donations accepted :-)
       {:ok, 0.4650075166583676}
 
@@ -37,6 +67,56 @@ defmodule Exthereum do
   @spec net_version :: {:ok, String.t} | {:error, String.t}
   def net_version do
     Net.version
+  end
+
+  @spec peer_count :: {:ok, integer} | {:error, String.t}
+  def peer_count do
+    Net.peer_count
+  end
+
+  @spec listening :: {:ok, boolean} | {:error, String.t}
+  def listening do
+    Net.listening
+  end
+
+  @spec protocol_version :: {:ok, integer} | {:error, String.t}
+  def protocol_version do
+    Eth.protocol_version
+  end
+
+  @spec syncing :: {:ok, any} | {:error, String.t}
+  def syncing do
+    Eth.syncing
+  end
+
+  @spec coinbase :: {:ok, String.t} | {:error, String.t}
+  def coinbase do
+    Eth.coinbase
+  end
+
+  @spec mining :: {:ok, boolean} | {:error, String.t}
+  def mining do
+    Eth.mining
+  end
+
+  @spec hashrate :: {:ok, String.t} | {:error, String.t}
+  def hashrate do
+    Eth.hashrate
+  end
+
+  @spec gas_price :: {:ok, String.t} | {:error, String.t}
+  def gas_price do
+    Eth.gas_price
+  end
+
+  @spec accounts :: {:ok, List.t} | {:error, String.t}
+  def accounts do
+    Eth.accounts
+  end
+
+  @spec block_number :: {:ok, integer} | {:error, String.t}
+  def block_number do
+    Eth.block_number
   end
 
   @spec get_balance(String.t) :: {:ok, float} | {:error, String.t}

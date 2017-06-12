@@ -19,7 +19,6 @@ defmodule Exthereum.Transport do
       def unhex("0x"<>str) do
         str
       end
-      @spec unhex(String.t) :: String.t
       def unhex(str) do
         str
       end
