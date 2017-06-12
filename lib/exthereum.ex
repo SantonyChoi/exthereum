@@ -62,6 +62,18 @@ defmodule Exthereum do
 
       iex> Exthereum.new_account("h4ck3r", "h4ck3r")
       {:ok, "50172f916cb2e64172919090af4ff0ba4638d8dd"}
+
+      iex> Exthereum.unlock_account("0xe55c5bb9d42307e03fb4aa39ccb878c16f6f901e", "h4ck3r")
+      {:ok, "50172f916cb2e64172919090af4ff0ba4638d8dd"}
+
+      iex> Exthereum.unlock_account("0xe55c5bb9d42307e03fb4aa39ccb878c16f6f901e", "h4ck3r")
+      {:ok, true}
+
+      iex> Exthereum.lock_account("0xe55c5bb9d42307e03fb4aa39ccb878c16f6f901e")
+      {:ok, true}
+
+      iex>  Exthereum.send_transaction("0xe55c5bb9d42307e03fb4aa39ccb878c16f6f901e", "0xfE8bf4ca8A6170E759E89EDB5cc9adec3e33493f", 0.0001, "h4ck3r")
+      {:ok, true}
   """
 
   @spec client_version :: {:ok, String.t} | {:error, String.t}
@@ -164,9 +176,24 @@ defmodule Exthereum do
     {:error, "pending"}
   end
 
-  @spec new_account(password :: String.t, password_confirmation :: String.t) :: {:ok, integer} | {:error, String.t}
+  @spec new_account(password :: String.t, password_confirmation :: String.t) :: {:ok, String.t} | {:error, String.t}
   def new_account(password, password_confirmation) do
     Personal.new_account(password, password_confirmation)
+  end
+
+  @spec unlock_account(account :: String.t, password :: String.t) :: {:ok, String.t} | {:error, String.t}
+  def unlock_account(account, password) do
+    Personal.unlock_account(account, password)
+  end
+
+  @spec lock_account(account :: String.t) :: {:ok, String.t} | {:error, String.t}
+  def lock_account(account) do
+    Personal.lock_account(account)
+  end
+
+  @spec send_transaction(from :: String.t, to :: String.t, amount :: float, password :: String) :: {:ok, String.t} | {:error, String.t}
+  def send_transaction(from, to, amount, password) do
+    Personal.send_transaction(from, to, amount, password)
   end
 
 end
