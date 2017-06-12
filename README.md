@@ -56,7 +56,7 @@ iex> Exthereum.get_balance("0xfE8bf4ca8A6170E759E89EDB5cc9adec3e33493f") # Donat
 ```
 
 ## Installation
-### THIS PROJECT IS NOT CURRENTLY PUBLISHED ON HEX.pm
+### This project is not currently published on hex.pm
 ### Clone the repo or wait a few weeks
 ```elixir
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
