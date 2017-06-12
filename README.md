@@ -2,7 +2,7 @@
 # Use Elixir to control all the Ethereum Things
 This library exists to present a convenient interface to control a full Ethereum node from Elixir, abstracting away the need to deal with the JSON-RPC API directly. It decodes the hex responses when necessary and functions return the idiomatic {:ok, data} | {:error, reason} tuples whenever possible. The goal is to cover the entire JSON-RPC API for Geth/Parity. This project has @specs for every function and is using Dialyzer + ExUnit.
 
-The roadmap is to cherrypick the most commonly used functions from https://github.com/ethereum/wiki/wiki/JSON-RPC first, then fill in the blanks. I will also include some of the more commonly used Admin+Personal API functions which will require geth to be started with `--rpcapi "db,eth,net,web3,personal"` which should only be done in a safe network environment if at all.
+So far I have "cherry picked" the most commonly used functions from https://github.com/ethereum/wiki/wiki/JSON-RPC.I plan to fill in the blanks. Pull requests welcomed. Because the goal is to fully manage an Ethereum node from Elixir, I have included some of the more commonly used Admin and Personal API functions which will require geth to be started with `--rpcapi "db,eth,net,web3,personal"`. This should only be done in a safe network environment if at all.
 
 UPDATE: Currently you can create accounts, unlock accounts, lock accounts, query balances, and send eth to anyone on the blockchain.
 
