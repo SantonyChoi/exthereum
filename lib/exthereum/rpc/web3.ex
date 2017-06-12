@@ -19,8 +19,7 @@ defmodule Exthereum.Web3 do
       {:error, reason} ->
         {:error, reason}
     end
-  end
 
-  #curl -X POST --data '{"jsonrpc":"2.0","method":"web3_sha3","params":["0x68656c6c6f20776f726c64"],"id":64}' localhost:8545
+  end
 
 end

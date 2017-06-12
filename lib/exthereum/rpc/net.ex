@@ -35,5 +35,4 @@ defmodule Exthereum.Net do
     end
   end
 
-
 end
