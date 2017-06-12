@@ -11,7 +11,7 @@ alias Exthereum.Units
   def to_wei(amount, denomination) do
     case denomination do
       :ether ->
-        amount * @units.eth
+        @units.eth / amount
       _ ->
         0
     end

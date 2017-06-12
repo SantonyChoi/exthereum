@@ -40,10 +40,11 @@ but I am doing it anyway.
   @spec send_transaction(from :: String.t, to :: String, value :: float, password :: String.t) :: {:ok, boolean} | {:error, String.t}
   def send_transaction(from, to, value, password) do
     wei_value = Conversion.to_wei(value, :ether)
-    txn = %{from: from, to: to, value: wei_value}
-    IEx.pry
+    txn = %{from: from, to: to, value: 1000000000000000}
+
     case __MODULE__.send("personal_sendTransaction", [txn, password]) do
       {:ok, result} ->
+        IEx.pry
         {:ok, result}
       {:error, reason} ->
         {:error, reason}
