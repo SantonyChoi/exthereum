@@ -70,7 +70,7 @@ mix dialyzer
       {:ok, true}
 
       iex>  Exthereum.send_transaction("0xe55c5bb9d42307e03fb4aa39ccb878c16f6f901e", "0xfE8bf4ca8A6170E759E89EDB5cc9adec3e33493f", 0.00043, "h4ck3r")
-      {:ok, true}
+      {:ok, "88c646f79ecb2b596f6e51f7d5db2abd67c79ff1f554e9c6cd2915f486f34dcb"}
 ```
 
 ## Installation
