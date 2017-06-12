@@ -156,5 +156,6 @@ defmodule Exthereum do
   def uncle_count_by_block_number(n) do
     {:error, "to_be_implemented"}
   end
+
  
 end
