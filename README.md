@@ -32,7 +32,7 @@ mix dialyzer
       {:ok, false}
 
       iex> Exthereum.coinbase
-      {:ok, false}
+      {:ok, "78fc2b9b6cf9b18f91037a5e0e074a479be9dca1"}
 
       iex> Exthereum.mining
       {:ok, true}
