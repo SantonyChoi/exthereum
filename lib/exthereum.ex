@@ -59,8 +59,8 @@ defmodule Exthereum do
 
       iex> Exthereum.new_account("h4ck3r", "h4ck3r")
       {:ok, "50172f916cb2e64172919090af4ff0ba4638d8dd"}
-
   """
+  
   @spec client_version :: {:ok, String.t} | {:error, String.t}
   def client_version do
     Web3.client_version
