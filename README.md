@@ -4,7 +4,7 @@ This library exists to present a convenient interface to control a full Ethereum
 
 The roadmap is to cherrypick the most commonly used functions from https://github.com/ethereum/wiki/wiki/JSON-RPC first, then fill in the blanks. I will also include some of the more commonly used Admin+Personal API functions which will require geth to be started with `--rpcapi "db,eth,net,web3,personal"` which should only be done in a safe network environment if at all.
 
-UPDATE: Currently you can create accounts, unlock accounts, lock accounts, and send eth to anyone on the blockchain.
+UPDATE: Currently you can create accounts, unlock accounts, lock accounts, query balances, and send eth to anyone on the blockchain.
 
 ```elixir
 mix test
