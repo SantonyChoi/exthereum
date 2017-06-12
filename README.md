@@ -54,11 +54,12 @@ iex> Exthereum.get_balance("0xfE8bf4ca8A6170E759E89EDB5cc9adec3e33493f") # Donat
 {:ok, 0.4650075166583676}
 
 ## Installation
-
+THIS PROJECT IS NOT CURRENTLY PUBLISHED ON HEX.pm
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 by adding `exthereum` to your list of dependencies in `mix.exs`:
 
 ```elixir
+THIS PROJECT IS NOT CURRENTLY PUBLISHED ON HEX.pm
 def deps do
   [{:exthereum, "~> 0.1.0"}]
 end
