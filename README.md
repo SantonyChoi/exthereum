@@ -8,11 +8,8 @@ The roadmap is to cherrypick the most commonly used functions from https://githu
 mix test
 mix dialyzer
 ```
-
-```elixir
 ### Currently Implemented Geth JSON-RPC methods
-
-
+```elixir
       iex> Exthereum.client_version
       {:ok, "Geth/v1.6.5-stable-cf87713d/darwin-amd64/go1.8.3"}
 
