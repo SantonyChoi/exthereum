@@ -2,6 +2,7 @@ defmodule Exthereum.Personal do
   use Exthereum.Transport
   alias Exthereum.Conversion
   require IEx
+  require Logger
 @moduledoc """
 This could be considered dangerous as it requires the admin api to be exposed over JSON-RPC
 but I am doing it anyway.
@@ -40,16 +41,23 @@ but I am doing it anyway.
   @spec send_transaction(from :: String.t, to :: String, value :: float, password :: String.t) :: {:ok, boolean} | {:error, String.t}
   def send_transaction(from, to, value, password) do
     wei_value = Conversion.to_wei(value, :ether)
-    txn = %{from: from, to: to, value: 1000000000000000}
+    hex_wei_value = "0x" <> Hexate.encode(value)
+    Logger.warn "weit value to send: " <> hex_wei_value
+    params = [%{
+      "from": from,
+      "to": to,
+      "gas": "0x76c0", # 30400,
+      "gasPrice": "0x9184e72a000", # 10000000000000
+      #"value": "0x19788FD6F800", # 2441406250
+      "value": hex_wei_value, # 2441406250
+      "data": "0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"}, password]
 
-    case __MODULE__.send("personal_sendTransaction", [txn, password]) do
+    case __MODULE__.send("personal_sendTransaction", params) do
       {:ok, result} ->
-        IEx.pry
         {:ok, result}
       {:error, reason} ->
         {:error, reason}
     end
   end
-
 
 end

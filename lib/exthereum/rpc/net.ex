@@ -1,6 +1,6 @@
 defmodule Exthereum.Net do
   use Exthereum.Transport
-
+ 
   @eth_server_url Application.get_env(:exthereum, :eth_server_url)
 
   @spec version :: {:ok, float} | {:error, String.t}

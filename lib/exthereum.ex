@@ -72,7 +72,7 @@ defmodule Exthereum do
       iex> Exthereum.lock_account("0xe55c5bb9d42307e03fb4aa39ccb878c16f6f901e")
       {:ok, true}
 
-      iex>  Exthereum.send_transaction("0xe55c5bb9d42307e03fb4aa39ccb878c16f6f901e", "0xfE8bf4ca8A6170E759E89EDB5cc9adec3e33493f", 0.0001, "h4ck3r")
+      iex>  Exthereum.send_transaction("0xe55c5bb9d42307e03fb4aa39ccb878c16f6f901e", "0xfE8bf4ca8A6170E759E89EDB5cc9adec3e33493f", 0.00043, "h4ck3r")
       {:ok, true}
   """
 
