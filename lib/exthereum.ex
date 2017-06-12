@@ -46,8 +46,11 @@ defmodule Exthereum do
       {:ok, 22061831512}
 
       iex> Exthereum.accounts
-      {:ok, ["0x78fc2b9b6cf9b18f91037a5e0e074a479be9dca1","0x141feb71895530f537c847d62f039d9be895bd35"]}
-
+      {:ok, ["0x78fc2b9b6cf9b18f91037a5e0e074a479be9dca1",
+        "0x141feb71895530f537c847d62f039d9be895bd35",
+        "0xe55c5bb9d42307e03fb4aa39ccb878c16f6f901e",
+        "0x50172f916cb2e64172919090af4ff0ba4638d8dd"]}
+        
       iex> Exthereum.block_number
       {:ok, 3858216}
 
@@ -60,7 +63,7 @@ defmodule Exthereum do
       iex> Exthereum.new_account("h4ck3r", "h4ck3r")
       {:ok, "50172f916cb2e64172919090af4ff0ba4638d8dd"}
   """
-  
+
   @spec client_version :: {:ok, String.t} | {:error, String.t}
   def client_version do
     Web3.client_version
