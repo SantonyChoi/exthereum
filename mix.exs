@@ -5,9 +5,10 @@ defmodule Exthereum.Mixfile do
     [app: :exthereum,
      version: "0.1.0",
      elixir: "~> 1.4",
-     maintainers: ["Alan Wilhelm"],
-     licenses: ["MIT"],
-     links: %{"GitHub" => "https://github.com/alanwilhelm/exthereum"},
+     package: package(),
+     description: description(),
+     name: "Exthereum",
+     source_url: "https://github.com/alanwilhelm/exthereum",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps()]
@@ -20,6 +21,24 @@ defmodule Exthereum.Mixfile do
     # Specify extra applications you'll use from Erlang/Elixir
     [extra_applications: [:logger],
      mod: {Exthereum.Application, []}]
+  end
+
+  defp package do
+    # These are the default files included in the package
+    [
+      name: :exthereum,
+      files: ["lib", "priv", "mix.exs", "README*", "LICENSE*"],
+      maintainers: ["Alan Wilhelm"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/alanwilhelm/exthereum"}
+    ]
+  end
+
+
+  defp description do
+     """
+     This library exists to present a convenient interface to control a full Ethereum node from Elixir, abstracting away the need to deal with the JSON-RPC API directly.
+     """
   end
 
   # Dependencies can be Hex packages:
