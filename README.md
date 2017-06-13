@@ -74,15 +74,13 @@ mix dialyzer
 ```
 
 ## Installation
-### This project is not currently published on hex.pm
-### Clone the repo or wait a few weeks
+## hex.pm
 ```elixir
-# PENDING
-# If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-# by adding `exthereum` to your list of dependencies in `mix.exs`:
-# def deps do
-#   [{:exthereum, "~> 0.1.0"}]
-# end
+If [available in Hex](https://hex.pm/docs/publish), the package can be installed
+by adding `exthereum` to your list of dependencies in `mix.exs`:
+def deps do
+  [{:exthereum, "~> 0.1.0"}]
+end
 ```
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)

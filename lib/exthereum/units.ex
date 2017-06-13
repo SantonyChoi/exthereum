@@ -1,4 +1,8 @@
 defmodule Exthereum.Units do
+  @moduledoc """
+  Module for @Type that represents Exthereum.Unit struct with various ether denominations
+
+  """
   alias Exthereum.Units
   @typedoc """
     Type that represents Exthereum.Unit struct with various ether denominations

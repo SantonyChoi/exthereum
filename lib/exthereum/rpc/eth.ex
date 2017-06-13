@@ -1,4 +1,7 @@
 defmodule Exthereum.Eth do
+  @moduledoc """
+  Eth Namespace for Ethereum JSON-RPC
+  """
   use Exthereum.Transport
   alias Exthereum.Conversion
 

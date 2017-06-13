@@ -1,12 +1,12 @@
 defmodule Exthereum.Personal do
+@moduledoc """
+Personal namespace for Ethereum JSON-RPC
+This could be considered dangerous as it requires the admin api to be exposed over JSON-RPC. Use only in a safe environment and see README to enable this namespace in Geth.
+"""
   use Exthereum.Transport
   alias Exthereum.Conversion
   require Logger
-@moduledoc """
-This could be considered dangerous as it requires the admin api to be exposed over JSON-RPC
-but I am doing it anyway.
-"""
-
+  
   @spec new_account(password :: String.t, password_confirmation :: String.t) :: {:ok, String.t} | {:error, String.t}
   def new_account(password, password_confirmation) do
     case __MODULE__.send("personal_newAccount",[password]) do

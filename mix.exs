@@ -27,7 +27,7 @@ defmodule Exthereum.Mixfile do
     # These are the default files included in the package
     [
       name: :exthereum,
-      files: ["lib", "priv", "mix.exs", "README*", "LICENSE*"],
+      files: ["lib", "mix.exs", "README*", "LICENSE*"],
       maintainers: ["Alan Wilhelm"],
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/alanwilhelm/exthereum"}
@@ -55,7 +55,7 @@ defmodule Exthereum.Mixfile do
      {:poison, "~> 3.0"},
      {:hexate,  ">= 0.6.0"},
      {:dialyxir, "~> 0.5", only: [:dev], runtime: false},
- 		 {:ex_doc, github: "elixir-lang/ex_doc", override: true}
+ 		 {:ex_doc, "~> 0.14", only: :dev}
    ]
   end
 end

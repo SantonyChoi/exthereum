@@ -1,4 +1,8 @@
 defmodule Exthereum.Web3 do
+  @moduledoc """
+  Web3 Namespace for Ethereum JSON-RPC
+  """
+
   use Exthereum.Transport
 
   @spec client_version :: {:ok, String.t} | {:error, String.t}

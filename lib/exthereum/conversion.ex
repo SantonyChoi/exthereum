@@ -1,4 +1,7 @@
 defmodule Exthereum.Conversion do
+  @moduledoc """
+  Various Wei/Eth Unit Conversion Functions
+  """
 alias Exthereum.Units
   @units %Units{}
 
