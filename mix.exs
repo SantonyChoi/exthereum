@@ -35,7 +35,8 @@ defmodule Exthereum.Mixfile do
     [{:httpoison, "~> 0.11.1"},
      {:poison, "~> 3.0"},
      {:hexate,  ">= 0.6.0"},
-     {:dialyxir, "~> 0.5", only: [:dev], runtime: false}
+     {:dialyxir, "~> 0.5", only: [:dev], runtime: false},
+ 		 {:ex_doc, github: "elixir-lang/ex_doc", override: true}
    ]
   end
 end

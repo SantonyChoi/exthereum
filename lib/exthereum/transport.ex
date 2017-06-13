@@ -1,6 +1,10 @@
 defmodule Exthereum.Transport do
-
-
+@moduledoc """
+This defines a macro that handles the JSON-RPC HTTP send
+"""
+  @doc"""
+  send macro used by RPC modules
+  """
   defmacro __using__(_opts) do
     quote do
       @spec send(method :: String.t, params :: map) :: {:ok, map} | {:error, String.t}

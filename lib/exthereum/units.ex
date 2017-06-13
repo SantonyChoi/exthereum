@@ -1,7 +1,7 @@
 defmodule Exthereum.Units do
   alias Exthereum.Units
   @typedoc """
-      Type that represents Exthereum.Unit struct with vaious ether denominations
+    Type that represents Exthereum.Unit struct with various ether denominations
   """
   @type t :: %Units{
     "wei": integer,
